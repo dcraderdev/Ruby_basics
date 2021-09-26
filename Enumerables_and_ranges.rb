@@ -45,7 +45,7 @@ print arr
 puts 
 
 # array/string.index(ele) - evaluates to the index where ele is found
-#array/string.include?(ele) - evaluates to a boolean indicating if else is found
+# array/string.include?(ele) - evaluates to a boolean indicating if else is found
 
 arr = ["SF", "NY", "LA"]
 
@@ -120,7 +120,7 @@ puts
 
 str = "follow the yellow brick road"
 
-print str.split("o") #essentially removes the "o's" and splits the text
+print str.split("o") #essentially removes the o's and splits the text
 puts
 print str.split("l") #would remove the l's and create gaps between side-by-side l's
 puts
@@ -129,61 +129,6 @@ puts                       # and then .join("x") would join back up the arrays a
 puts                       # x in every spot where the arrays met back, then evaluate to a string
 
 
-#          .~.~.~HERE ARE SOME CHEAT SHEETS PROVIDED BY APP ACADEMY~.~.~
-
-#           ~.~.~Manipulation~.~.~
-
-# add element(s) to the end using push
-people = ["Tommy", "Bex"]
-p people.push("Maurice", "Abby")      # prints ["Tommy", "Bex", "Maurice", "Abby"]
-p people                              # prints ["Tommy", "Bex", "Maurice", "Abby"]
-
-# remove the last element using pop
-people = ["Tommy", "Bex"]
-p people.pop()                        # prints "Bex"
-p people                              # prints ["Tommy"]
-
-# add elements(s) to the front using unshift
-people = ["Tommy", "Bex"]
-p people.unshift("Oscar", "Matthias") # prints ["Oscar", "Matthias", "Tommy", "Bex"]
-p people                              # prints ["Oscar", "Matthias", "Tommy", "Bex"]
-
-# remove the first element using shift
-people = ["Tommy", "Bex"]
-p people.shift()                      # prints "Tommy"
-p people                              # prints ["Bex"]
-
-
-#        ~.~.~Checking Existence~.~.~
-
-# check if an element exists in an array using include?
-people = ["Tommy", "Bex", "Abby", "Maurice"]
-p people.include?("Abby")   # prints true
-p people.include?("Mashu")  # prints false
-
-# find the index of an element in an array using index
-people = ["Tommy", "Bex", "Abby", "Maurice"]
-p people.index("Abby")      # prints 2
-p people.index("Maurice")   # prints 3
-p people.index("Oscar")     # prints nil
-p people.index("Danny")     # prints nil
-
-
-#       ~.~.~String <> Array~.~.~
-
-# convert a string into an array using split
-sentence = "Hey Programmers! What's up."
-p sentence.split(" ")      # prints ["Hey", "Programmers!", "What's", "up."]
-p sentence.split("a")      # prints ["Hey Progr", "mmers! Wh", "t's up."]
-p sentence.split("gram")   # prints ["Hey Pro", "mers! What's up."]
-p sentence                 # prints "Hey Programmers! What's up."
-
-# convert an array into a string using join
-words = ["Rubies", "are", "red"]
-p words.join(" ")          # prints "Rubies are red"
-p words.join("-")          # prints "Rubies-are-red"
-p words.join("HI")         # prints "RubiesHIareHIred"
-p words                    # prints ["Rubies", "are", "red"]
 
 puts"\n\n----"
 
@@ -213,13 +158,13 @@ months.each do |month|              # do is a command that can output several
     puts"-"
 end
 
-
+puts "---"
 sentence = "hello world"
 
 sentence.each_char do |char|
     print char
 end
-
+puts
 
 months.each { |month| puts month }      #|Variable| 
 puts "---"
@@ -263,7 +208,7 @@ puts "\n\n---"
 # (start..end).each iterate from start to end (inclusive)
 # (start...end).each, iterate from start to end (excluding end)
 
- arr = (1..1000)      #["a", "b", "c", "d","e"]
+ arr = (1..10)      #["a", "b", "c", "d","e"]
 
 arr.each { |num| puts num }
 
@@ -321,6 +266,120 @@ end # prints
 # 5
 
 
+#    .~.~.~HERE ARE SOME CHEAT SHEETS PROVIDED BY APP ACADEMY~.~.~
+
+#        ~.~.~Checking Existence~.~.~
+
+# check if an element exists in an array using include?
+people = ["Tommy", "Bex", "Abby", "Maurice"]
+p people.include?("Abby")   # prints true
+p people.include?("Mashu")  # prints false
+
+# find the index of an element in an array using index
+people = ["Tommy", "Bex", "Abby", "Maurice"]
+p people.index("Abby")      # prints 2
+p people.index("Maurice")   # prints 3
+p people.index("Oscar")     # prints nil
+p people.index("Danny")     # prints nil
+
+#    
+
+#           ~.~.~Manipulation~.~.~
+
+# add element(s) to the end using push
+people = ["Tommy", "Bex"]
+p people.push("Maurice", "Abby")      # prints ["Tommy", "Bex", "Maurice", "Abby"]
+p people                              # prints ["Tommy", "Bex", "Maurice", "Abby"]
+
+# remove the last element using pop
+people = ["Tommy", "Bex"]
+p people.pop()                        # prints "Bex"
+p people                              # prints ["Tommy"]
+
+# add elements(s) to the front using unshift
+people = ["Tommy", "Bex"]
+p people.unshift("Oscar", "Matthias") # prints ["Oscar", "Matthias", "Tommy", "Bex"]
+p people                              # prints ["Oscar", "Matthias", "Tommy", "Bex"]
+
+# remove the first element using shift
+people = ["Tommy", "Bex"]
+p people.shift()                      # prints "Tommy"
+p people                              # prints ["Bex"]
+#       ~.~.~String <> Array~.~.~
+
+# convert a string into an array using split
+sentence = "Hey Programmers! What's up."
+p sentence.split(" ")      # prints ["Hey", "Programmers!", "What's", "up."]
+p sentence.split("a")      # prints ["Hey Progr", "mmers! Wh", "t's up."]
+p sentence.split("gram")   # prints ["Hey Pro", "mers! What's up."]
+p sentence                 # prints "Hey Programmers! What's up."
+
+# convert an array into a string using join
+words = ["Rubies", "are", "red"]
+p words.join(" ")          # prints "Rubies are red"
+p words.join("-")          # prints "Rubies-are-red"
+p words.join("HI")         # prints "RubiesHIareHIred"
+p words                    # prints ["Rubies", "are", "red"]
+
+
+puts"\n---\n---\n---PRACTICE PROBLEMS--- "
+
+#                 ~_~_~_~_~_PRACTICE PROBLEMS_~_~_~_~_~_~
+
+
+# Write a method to_initials that takes in a person's name string and returns a 
+# string representing their initials.
+
+def to_initials(name)
+  parts = name.split(" ")
+  initials = ""
+  parts.each { |part| initials += part[0]}
+  return initials
+
+end
+
+puts to_initials("Kelvin Bridges")      # => "KB"
+puts to_initials("Michaela Yamamoto")   # => "MY"
+puts to_initials("Mary La Grange")      # => "MLG"
+
+puts"\n\n\n"
+# Write a method first_in_array that takes in an array and two elements, the method 
+# should return the element that appears earlier in the array.
+
+# def first_in_array(arr, el1, el2)
+#   if arr.index(el1) < arr.index(el2)
+#     return el1
+#   else
+#     return el2
+#   end
+# end
+
+# puts first_in_array(["a", "b", "c", "d"], "d", "b"); # => "b"
+# puts first_in_array(["cat", "bird" ,"dog", "mouse" ], "dog", "mouse"); # => "dog"
+
+# puts first_in_array(["a", "b", "c", "d"], "d", "b"); # => "b"
+# puts first_in_array(["cat", "bird" ,"dog", "mouse" ], "dog", "mouse"); # => "dog"
 
 
 
+def first_in_array(arr, el1, el2)
+     if arr.index(el1) < arr.index(el2)
+      return el1
+     else
+      return el2
+     end
+end
+
+puts first_in_array(["a", "b", "c", "d"], "d", "b"); # => "b"
+
+puts"\n\n---"
+# Write a method abbreviate_sentence that takes in a sentence string and returns 
+# a new sentence where every word longer than 4 characters has all of it's vowels 
+# removed.
+
+def abbreviate_sentence(sent)
+
+end
+
+puts abbreviate_sentence("follow the yellow brick road") # => "fllw the yllw brck road"
+puts abbreviate_sentence("what a wonderful life") 
