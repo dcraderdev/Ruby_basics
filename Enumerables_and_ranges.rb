@@ -326,7 +326,7 @@ puts"\n---\n---\n---PRACTICE PROBLEMS--- "
 
 #                 ~_~_~_~_~_PRACTICE PROBLEMS_~_~_~_~_~_~
 
-
+#To Initials
 # Write a method to_initials that takes in a person's name string and returns a 
 # string representing their initials.
 
@@ -343,6 +343,7 @@ puts to_initials("Michaela Yamamoto")   # => "MY"
 puts to_initials("Mary La Grange")      # => "MLG"
 
 puts"\n\n\n"
+#First In Array
 # Write a method first_in_array that takes in an array and two elements, the method 
 # should return the element that appears earlier in the array.
 
@@ -373,13 +374,105 @@ end
 puts first_in_array(["a", "b", "c", "d"], "d", "b"); # => "b"
 
 puts"\n\n---"
+#Abbreviate Sentence
 # Write a method abbreviate_sentence that takes in a sentence string and returns 
 # a new sentence where every word longer than 4 characters has all of it's vowels 
 # removed.
 
 def abbreviate_sentence(sent)
+    
+  words = sent.split(" ")
+  new_words = []
+
+  words.each do |word|
+    if word.length > 4
+      new_word = abbreviate_word(word)
+      new_words << new_word
+    else
+      new_words << word
+    end
+  end
+
+  return new_words.join(" ")
+end
+
+def abbreviate_word(word)
+  vowels = "aeiou"
+  new_word = ""
+
+  word.each_char do |char|
+    if !vowels.include?(char)
+      new_word += char
+    end
+  end
+
+  return new_word
+end
+puts abbreviate_sentence("follow the yellow brick road") # => "fllw the yllw brck road"
+puts abbreviate_sentence("what a wonderful life")        # => "what a wndrfl life"
+
+
+puts "---"
+#Format Name
+# Write a method format_name that takes in a name string and returns the name 
+# properly capitalized.
+
+# Hint: use str.upcase and str.downcase
+# "abc".upcase # => "ABC"
+
+def format_name(str)
+  parts = str.split(" ")
+  new_parts = []
+
+  parts.each do |part|
+    new_parts << part[0].upcase + part[1..-1].downcase
+  end
+
+  return new_parts.join(" ")
+end
+
+puts format_name("chase WILSON") # => "Chase Wilson"
+puts format_name("brian CrAwFoRd scoTT") # => "Brian Crawford Scott"
+
+puts"\n\n\----"
+#Is Valid Name
+# Write a method is_valid_name that takes in a string and returns a boolean 
+# indicating whether or not it is a valid name.
+
+
+
+# A name is valid is if satisfies all of the following:
+# - contains at least a first name and last name, separated by spaces
+# - each part of the name should be capitalized
+#
+# Hint: use str.upcase or str.downcase
+# "a".upcase # => "A"
+
+
+#split name, change name to correct spelling, compare names
+def is_valid_name(str)
+parts = str.split(" ")
+new_parts = []
+parts.each do |part|
+    new_parts<<part[0].upcase + part(1..-1).downcase
+end
+
+return new_parts
 
 end
 
-puts abbreviate_sentence("follow the yellow brick road") # => "fllw the yllw brck road"
-puts abbreviate_sentence("what a wonderful life") 
+puts is_valid_name("Kush Patel")       # => true
+puts is_valid_name("Daniel")           # => false
+puts is_valid_name("Robert Downey Jr") # => true
+puts is_valid_name("ROBERT DOWNEY JR") # => false
+
+
+
+
+
+
+
+
+
+
+
