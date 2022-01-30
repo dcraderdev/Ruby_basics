@@ -1,3 +1,20 @@
+
+
+
+
+
+
+
+
+# # ARRAYS III
+
+
+
+
+
+
+
+
 p "Lets go over some more array stuff."
 
 a = [1, 2, 3]
