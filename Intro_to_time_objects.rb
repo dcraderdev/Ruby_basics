@@ -296,7 +296,7 @@ require 'time'  # this loads in an additional availability from the ruby library
                 # that gives our time class some more functionality
 puts Time.parse("2016-01-01")
 # 2016-01-01 00:00:00 -0800    # Time class
-# the parse nethod accepts a string format and if it recogizes the format 
+# the parse method accepts a string format and if it recogizes the format 
 # will give us out a time object 
 
 puts Time.strptime("03-04-2000", "%m-%d-%Y")
