@@ -1,5 +1,13 @@
 
 
+
+# # INTRO TO STRINGS
+# disclaimer : this is my first code and I tried not to edit it too much in hope of future laughs at my noob old self
+
+
+
+
+
 #NOOB COMMANDS
 puts "hello world"
 #puts "shoots brah"
@@ -7,17 +15,26 @@ puts "no more waves brah"
 puts "goodbye world" #no more text
 
 
-#math operations
+
+
+# # math operations
 puts 2 + 2
 puts -4+2
 puts 5*5.0+ 8 - 9 * 2.050
 
-#modulos
+
+
+
+# # modulos
 puts 13 % 5.000
 puts 15 % 15
 puts 13 * 3.123123123
 
-#TRUE/FALSE COMMANDS
+
+
+
+
+# # TRUE/FALSE COMMANDS
 # equal ==
 # not equal !=
 # greater than >
@@ -28,9 +45,11 @@ puts 5==5
 puts "5==6-1"
 puts 5==6-1-0
 
-puts "----"
 
-#boolean data type lecture
+
+
+
+# # boolean data type lecture
 #can only be true/false
 #operations
 # ! (not)
@@ -48,9 +67,8 @@ puts false && true
 puts true  && false
 puts true  && true
 
-print "----\n"
 
-puts "---"
+
 print "hello world" #print does not automatically add a new line after every command
 
 print "hello\n"  #the /n creates a new line of code
@@ -66,7 +84,7 @@ p 42
 p 42-42
 p 42-42==0 && true
 
-puts "---"
+
 
 puts "hello world and goodbye.length".length #.length at the end counts the characters in a line
 
@@ -75,7 +93,10 @@ puts "hey" + "programmers"
 
 puts "Hey-Programmers".length < 5
 
-puts "----"
+
+
+
+# # add numerical strings (Fixnum)
 
 my_num = 42
 puts my_num
@@ -101,9 +122,9 @@ puts firstname + lastname == "Donovan Crader"
 
 puts "---"
 
-sentence = "There is no spoon"
+sentence = "Do not try and bend the spoon — that's impossible."
 puts "---1:"
-puts sentence + "?"   # ?
+puts sentence + " Instead, only try to realize the truth."   # Do not try and bend the spoon — that's impossible. Instead, only try to realize the truth.
 
 puts "---2:"
 puts sentence         # ?

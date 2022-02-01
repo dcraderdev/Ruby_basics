@@ -1,3 +1,16 @@
+
+
+# Strings II
+
+
+
+
+
+
+
+
+
+
 num = 40        #num = 40 when code is ran
 num + 5         #num will still be 40 when nunm is ran independently
 puts "-----1"

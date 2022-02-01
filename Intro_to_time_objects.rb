@@ -149,7 +149,7 @@ p start_of_the_year + (60 * 60 * 24 * 7 * 3)
 # this should advance us 3 weeks past our JAN 1 2016 date
 # 2016-01-22 00:00:00 -0800
 # this seems like a not so good method personally
-# stick to jsut mulitplying by days and leave the weeks off
+# stick to just mulitplying by days and leave the weeks off
 
 
 
@@ -200,70 +200,18 @@ summer = Time.new(2016, 6, 21)
 independence_day = Time.new(2016, 7, 4)
 winter = Time.new(2016, 12, 21)
 
-
-
 puts birthday < summer
 # true
-
 p birthday  # 2016-04-12 00:00:00 -0700
 p summer    # 2016-06-21 00:00:00 -0700
-
 puts independence_day > winter
-
 puts birthday <= Time.new(2016, 4, 12)
 # is birthday less than or equal to this new time we just created
-
-
 
 # can use predicate methods as well 
 # such as between? 
 
 puts independence_day.between?(birthday, summer)
-
-
-
-
-
-
-
-
-# FAILED ATTEMPT AT MAKING AN 21+ ID CHECK
-
-
-# birthday = Time.new(1993, 4, 12)
-# summer = Time.new(2016, 6, 21)
-# independence_day = Time.new(2016, 7, 4)
-# winter = Time.new(2016, 12, 21)
-# twentyone_years_ago = (Time.now - (60 * 60 * 24 * 365.2 * 21 ))
-
-
-# # puts today - twentyone_years_ago 
-
-# def id_check()
-#   twentyone_years_ago = (Time.now - (60 * 60 * 24 * 365.2 * 21 ))
-#   today = Time.now
-#   if today - twentyone_years_ago > birthday + twentyone_years_ago
-#     puts "Alright, here's your booze"
-#   else
-#     puts "Not today, jr.."
-#   end
-# end
-
-# puts id_check(birthday)
-
-# birthday = Time.new(1993, 4, 12)
-
-# puts birthday.between?(twentyone_years_ago, today)
-
-# p twentyone_years_ago
-
-# (Time.today - (60 * 60 * 24 * 365.25 * 21 ), summer)
-
-# puts today - twentyone_years_ago
-
-
-
-
 
 
 
@@ -324,10 +272,44 @@ p someday.to_a
 
 today = Time.now
 p today.strftime("%B %d, %Y")
+# "January 31, 2022"
 # this is a method we can call on a time, turns it into a string
 # then we choose what custom variables we want and in what order
 # conveniently it replaces the variables with the data and lets us
-# format how we would like with ""
+# format how we would like within the ""
+
+
+
+
+
+
+
+
+
+# #  extend time object with require time
+
+# this is how we can text a string from an unconventional format/system 
+# such as a string in a text file and get Ruby to interpretate them properly
+
+# we have to include " require 'time' "
+require 'time'  # this loads in an additional availability from the ruby library
+                # that gives our time class some more functionality
+puts Time.parse("2016-01-01")
+# 2016-01-01 00:00:00 -0800    # Time class
+# the parse nethod accepts a string format and if it recogizes the format 
+# will give us out a time object 
+
+puts Time.strptime("03-04-2000", "%m-%d-%Y")
+# with this syntax we have told Ruby how to interpret the string we've been given
+# so that it can give us a valid Time object
+# 2000-03-04 00:00:00 -0800
+
+# we could easily switch the dates in the second parameter if our information was
+# given to us in a different order
+
+puts Time.strptime("2000-04-03", "%Y-%d-%m") 
+# 2000-03-04 00:00:00 -0800
+# same answer as above becuase it converted it properly and gave us a valid time object
 
 
 

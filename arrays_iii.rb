@@ -20,7 +20,7 @@ p "Lets go over some more array stuff."
 a = [1, 2, 3]
 b = [1, 2 ,3]
 
-#they look like the same thing but they have a different 
+# they look like the same thing but they have a different 
 # object ID which could cause problems for us later
 # we can show this by using .object_id method
 
@@ -55,7 +55,6 @@ p a.object_id
 p b.object_id
 # 70311760844660
 
-
 # splat_arguments
 # Great for when you don't know how many items will be in the array 
 
@@ -70,7 +69,16 @@ p sum(3, 2, 2, 2, 3)
 
 
 
-# the .any? and .all? method
+
+
+
+
+
+
+
+
+
+# # the .any? and .all? method
 # booleans
 
 #checks if any of the array meets the criteria of the argument
@@ -87,7 +95,18 @@ p user_input
 
 
 
-# the_find_and_detect_methods_in_arrays
+
+
+
+
+
+
+
+
+
+
+
+# # the_find_and_detect_methods_in_arrays
 
 #return the first value found in the array that you 
 #have provided in the the block
@@ -121,6 +140,14 @@ lottery = [4, 8, 1, 16, 23, 42]
 result = lottery.find { |number| number.odd? }
 
 p result
+
+
+
+
+
+
+
+
 
 
 
@@ -171,6 +198,19 @@ p custom_compact(sports)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 # # the _inject and _reduce methods
 # two names/methods for the same thing
 
@@ -201,6 +241,18 @@ end
 puts prodresults
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 # # the _flatten method
 
 
@@ -223,6 +275,14 @@ p c
 p registrations.flatten
 # flatten does not save the changes within the variable permanently
 p registrations
+
+
+
+
+
+
+
+
 
 
 
@@ -264,6 +324,10 @@ p flavors.sample
 # whatever value is in the () is how many elements it will extract from the array
 # elements will not be repeated
 # result will be returned in an array if  using 'p' and any value in ()
+
+
+
+
 
 
 

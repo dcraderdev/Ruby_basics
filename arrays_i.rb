@@ -1,12 +1,14 @@
 
 
+# # ARRAYS I
 
 
 
 
 
 
-#access_multiple variables
+
+# # access_multiple variables
 
 channels = ["CBS FOX NBC ESP UPN"]
 
@@ -16,21 +18,27 @@ p "hello"
 
 p channels.values_at( 0, -1)
 
-#the_slice_method
+
+
+
+# # the_slice_method
 
 numbers = [0, 2, 4, 2, 10, 12, 14]
 
 p numbers.slice(3)
 p numbers.slice(100)
 
-#overwrite_one_or_more_array_elements
+
+
+
+
+# # overwrite_one_or_more_array_elements
 
 fruits = ["Apple", "Orange", "Grape", "Banana"]
 
 fruits[1]= "Watermelon"
-p fruits
-
-#you can add to an array by adding this:
+p "#{fruits[1]} has been added at pos. 1 as you can see '#{fruits}''."
+# overwrite an array by adding [] and the place in the array you want to insert
 fruits[6] = "Rasp"
 p fruits
 
@@ -40,23 +48,41 @@ p fruits
 fruits[0..2] = "Canteloupe"
 p fruits
 
-#the_length_and_size_methods
+
+
+
+
+
+# # the_length_and_size_methods
 
 p [1, nil, 2, 3, nil, 4, "Hello", 3.14].length
 p [1, nil, 2, 3, nil, 4, "Hello", 3.14].size
 
 p [].length
 
-p [1, nil, 2, 3, nil, 4, "Hello", 3.14].count(2)
+p [1, nil, 2, 3, 2, nil, 4, "Hello", 3.14].count(2)
 #counts the number of times (2) pops up in the array
 
-#the_empty?_and_nil?_method
+
+
+
+
+
+
+
+# # the_empty?_and_nil?_method
+
 puts [1, 2, 3].empty?
 #false
 puts [].empty?
 #true
 
-#the_first_and_last_method
+
+
+
+
+
+# # the_first_and_last_method
 
 arr = [1, 3, 5, 7, 9, 15, 21, 18, 6]
 
@@ -64,7 +90,7 @@ p arr.first
 p arr.last
 
 p arr.first(1)
-#(#) dictates how many objects you pull from the array
+# (#) dictates how many objects you pull from the array
 p arr.last(2)
 
 def custom_first(arr, num = 0)
@@ -91,7 +117,15 @@ p custom_last(arr)
 p custom_last(arr, 5)
 #6
 
-#the_push_method_the_shovel_operator_and_and_the .insert_method
+
+
+
+
+
+
+
+
+# # the_push_method_the_shovel_operator_and_and_the .insert_method
 
 locations = ["House", "Airport", "Bar"]
 
@@ -108,13 +142,20 @@ locations << "Saloon #2" << "Gamestop"
 #can add multiple objects with multiple shovels
 
 locations.insert(1, "Airport2", "Bar2")
-    #minimum of two arguments (argument1 is where to insert, argument2 is what to insert)
+#minimum of two arguments (argument1 is where to insert, argument2 is what to insert)
     
 p locations
 #["House", "Airport2", "Bar2", "Airport", "Bar", "Restaurant", "Saloon", "Saloon #2", "Gamestop"]
 
 
-#the_pop_method
+
+
+
+
+
+
+
+# # the_pop_method
 #removes method from the array and can even store it in a variable
 
 arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -133,7 +174,16 @@ last_item = arr.pop
 p last_item
 #8
 
-#the_shift_and _the_unshift_methods
+
+
+
+
+
+
+
+
+# # the_shift_and _the_unshift_methods
+
 arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 p arr
 #[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -142,7 +192,7 @@ arr.shift
 #also can be stored in a variable
 p arr
 #[2, 3, 4, 5, 6, 7, 8, 9, 10]
- 
+
 arr.unshift(25)
 p arr
 #[25, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -152,7 +202,17 @@ arr.unshift(28, 300, 450)
 p arr
 #[28, 300, 450, 25, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-#equality_and_inequalities_operators_with_arrays
+
+
+
+
+
+
+
+
+
+
+# # equality_and_inequalities_operators_with_arrays
 a = [1, 2, 3]
 b = [1, 2, 3, 4]
 c = [3, 2, 1]
@@ -177,7 +237,13 @@ b = ["skittles", "starbursts"]
 p a == b
 #will return false because it is case sensitive
 
-#the_spaceship_operator
+
+
+
+
+
+
+# # the_spaceship_operator
 #   <=>
 
 p 5 <=> 5
@@ -208,7 +274,15 @@ p [3, 4, 5] <=> [3, 4, -10]
 #1
 #returns 1 because left is bigger
 
-#convert_range_to_an_array
+
+
+
+
+
+
+
+
+# # convert_range_to_an_array
 letters_range = "A".."T"
 p letters_range
 p letters_range.to_a
@@ -216,7 +290,16 @@ p letters_range.to_a
 letters_array = letters_range.to_a
 # set the variable as the array
 
-# the_is_a?_method
+
+
+
+
+
+
+
+
+
+# # the_is_a?_method
 
 p 1.class
 p 3.14.class
@@ -257,7 +340,15 @@ p 1.is_a?(BasicObject)
 
 #-=-=-===-=-
 
-#review_of_blocks
+
+
+
+
+
+
+
+
+# # review_of_blocks
 
 
 # 3.times { |number| puts "Hello there, we are currently on loop number #{number} " }
@@ -308,8 +399,6 @@ fives.each do |number|
 end
 
 
-
-
 numberz = 5..16
 fives = numberz.to_a
 odds = []
@@ -329,7 +418,15 @@ p odds
 p evens
 
 
-#each_within_each
+
+
+
+
+
+
+
+
+# # each_within_each
 shirts = ["striped", "plain white", "plaid", "band"]
 ties = ["polka dot", "solid color", "boring"]
 
@@ -340,7 +437,15 @@ shirts.each do |shirt|
 end
 
 
-#the_for_loop
+
+
+
+
+
+
+
+
+# # the_for_loop
 
 numbers = [3, 5 , 7]
 
@@ -366,11 +471,18 @@ puts "___"
 rng = 1..10
 rng.each do |rng_number|
     print rng_number
-
 end
 
 
-#the .each_wtih_index_method
+
+
+
+
+
+
+
+
+# # the .each_wtih_index_method
 
 colors = ["Red", "Blue", "Yellow", "Green"]
 
@@ -388,7 +500,16 @@ colors.each_with_index do |color, index|
 end
 
 
-# write a loop that iterates over a numeric array
+
+
+
+
+
+
+
+
+# # write a loop that iterates over a numeric array
+
 # output the PRODUCT of each number and its index position
 
 fives = [5, 10, 15, 20, 25]
@@ -402,7 +523,16 @@ end
 nums = [1, 2, 3, 4, 5]
 sum = 0
 
-#write a loop that gives me a sum of
+
+
+
+
+
+
+
+
+# # write a loop that gives me a sum of
+
 # the products of each index and its value
 
 nums.each_with_index do |num, i|
@@ -433,7 +563,13 @@ print_if(arr)
 
 
 
-#the_map_or_collect_method
+
+
+
+
+
+
+# # the .map_or .collect_method
 
 numbers = [1, 2, 3, 4, 5,]
 squares = numbers.map { |number| number ** 2}
@@ -462,9 +598,16 @@ p results
 
 numbers = [3, 8, 11, 15, 89]
 
-# write a cubes method that accepts and array
-# and returns a new array. the new array
-# will have all the values from the original one cubed.
+
+
+
+
+
+
+
+# # write a cubes method that accepts and array
+# # and returns a new array. the new array
+# # will have all the values from the original one cubed.
 
 def cubes(array)
     array.map {|number| number ** 3 }
@@ -475,7 +618,15 @@ p cubes(numbers)
 
 
 
-#Iteration_over_arrays_with_while_or_until_loops
+
+
+
+
+
+
+
+
+# # Iteration_over_arrays_with_while_or_until_loops
 
 animals = ["Lion", "Zebra", "Baboon", "Cheetah"]
 
@@ -488,7 +639,13 @@ end
 
 
 
-#the_break_keyword
+
+
+
+
+
+
+# # the_break_keyword
 
 prizes = ["Pyrite", "Pyrite", "Pyrite", "Pyrite", "Gold", "Pyrite"]
 
@@ -516,20 +673,28 @@ numbers.each do |num|
     end
 end
 
-
-
 numbers = [1, 2, 3, "Hello", 5, 6, nil, 7, 8, [] ]
 
+
+
 numbers.each do |num|
-   unless num.is_a?(Fixnum)
+    unless num.is_a?(Fixnum)
     next
-   else
-    puts "The square of #{num} is #{num **2}"
-   end
+    else
+        puts "The square of #{num} is #{num **2}"
+    end
 end
 
 
-#the_Reverse_method
+
+
+
+
+
+
+
+
+# # the_Reverse_method
 
 p "Hello".reverse
 
@@ -552,13 +717,18 @@ b = [5, 6, 7]
 def custom_concat(arr1, arr2)
     arr2.each {|elem| arr1 << elem}
     arr1
-
-
 #return arr1 with all of the elemetns from arr2
 # added to the end of it
-
 end
- p custom_concat(a, b)
+p custom_concat(a, b)
+# [1, 2, 3, 4, 5, 6, 7]
+
+
+
+
+
+
+
 
 
 # The_max_and_min_method
@@ -579,13 +749,13 @@ puts "____"
 fruits = ["apple", "banana", "watermellon", "cantelopue", "kiwi"]
 
 def custom_max(arr)
-    #return the maximum value in the array
+#return the maximum value in the array
     arr.sort[-1]
 end
 
 
 def custom_min(arr)
-        #return the minimum value in the array
+#return the minimum value in the array
     arr.sort[0]
 end
 
@@ -593,7 +763,15 @@ end
 p custom_max(fruits)
 p custom_min(fruits)
 
-# the_include?_method_on_an_array
+
+
+
+
+
+
+
+
+# # the_include?_method_on_an_array
 
 p "Helllo".include?("l")
 
@@ -605,24 +783,47 @@ p numbers.include?(-55)
 
 
 
-#the .index_and_find_index_method_on_an_array
+
+
+
+
+
+
+
+# # the .index_and_find_index_method_on_an_array
 
 colors = ["Red", "Blue", "Green", "Red"]
 
 p colors.index("Red")
 #returns 0 becuase .index returns the first place that the thing searched pops at is returned
 
-#the_.select_method
+
+
+
+
+
+
+
+
+
+# # the_.select_method
 grades = [80, 95, 13, 76, 25, 39]
 
 matches = grades.select do |number|
     number >= 75
-   
 end
 
 p matches
 
-#the_reject_method
+
+
+
+
+
+
+
+
+# # the_reject_method
 
 animals = ["cheetah", "cat", "lion", "elephant", "dog", "cow"]
 
@@ -634,7 +835,15 @@ p resultreject
 p resultselect
 
 
-# unpack_a_mulidimesional_Array
+
+
+
+
+
+
+
+
+# # unpack_a_mulidimesional_Array
 
 users = [["Bob", 25, "Male"], ["Susan", 105, "Female"], ["Larry", 12, "Male"]]
 
@@ -656,12 +865,20 @@ p susan
 #["Susan", 105, "Female"]
 
 
-#the_partition_method
 
 
 
-foods = ["Steak", "Veggies", "Steak Burger", "Kale", 
-         "Tofu", "Tuna Steaks"]
+
+
+
+
+
+# # the_partition_method
+
+
+
+foods = [ "Steak", "Veggies", "Steak Burger", "Kale",
+          "Tofu", "Tuna Steaks" ]
 
 
 good = foods.select { |food| food.include?("Steak") }
@@ -676,7 +893,15 @@ good, bad = foods.partition { |food| food.include?("Steak") }
 p good
 p bad
 
-#the_split_method_on_an_array
+
+
+
+
+
+
+
+
+# # the .split_method_on_an_array
 
 sentence = "Hi, my name is Donovan. There are spaces here!"
 
@@ -710,7 +935,16 @@ letters.each { |letter| puts "#{letter} is awesome!"}
 # a is awesome!
 # n is awesome!
 
-# the_join_method_on_an_array
+
+
+
+
+
+
+
+
+
+# # the_join_method_on_an_array
 
 names = ["Joe", "Moe", "Bob"]
 
@@ -718,7 +952,7 @@ p names.join
 #without argument it simply adds every object with the array
 # "JoeMoeBob"
 p names.join("-")
-#whatever is in the parenthesese is how it will separate the concatanation
+# whatever is in the parenthesese is how it will separate the concatanation
 # "Joe-Moe-Bob"
 
 def custom_join(array, delimiter = "")
@@ -736,7 +970,15 @@ p custom_join(names, "-")
 
 
 
-#the_count_method_on_an_array
+
+
+
+
+
+
+
+
+# # the_count_method_on_an_array
 
 puts "Hello World".count("l")
 #3  for 3 "l's"
@@ -746,8 +988,8 @@ puts "Hello World".count("lo")
 
 puts "An amazin aarvark appeared".count("Aa")
 
-        # return the number of total times
-        # the search characters are in the string
+# return the number of total times
+# the search characters are in the string
 
 def custom_count(string, search_characters)
     count = 0
@@ -771,7 +1013,15 @@ end
 
 puts custom_count("An amazin aarvark appeared", "Aa")
 
-#the_index_and_rindex_methods
+
+
+
+
+
+
+
+
+# # the_index_and_rindex_methods
 
 #they return the index position of either the first occurance or the last occurance of the parameters
 # that is passed thru
@@ -793,19 +1043,19 @@ p fact.rindex("e")
 
 
 fact = "I am very handsome"
-   
-    #return nil if substring not found in string
-    #return index position of substring if found in string
 
-    def custom_index(string, substring)
-        return nil unless string.include?(substring)
-           length = substring.length
-           string.chars.each_with_index do |char, index|
-                sequence = string[index, length]
-                return index if sequence == substring
-           end
+#return nil if substring not found in string
+#return index position of substring if found in string
 
-    end
+def custom_index(string, substring)
+    return nil unless string.include?(substring)
+        length = substring.length
+        string.chars.each_with_index do |char, index|
+            sequence = string[index, length]
+            return index if sequence == substring
+        end
+
+end
 
     p custom_index(fact, "I") # 0
     p custom_index(fact, "h") # 10

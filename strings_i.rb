@@ -1,9 +1,14 @@
 
-# STRING_STUFF
+
+
+# STRING_I
 
 
 
-# the_insert_method_on_a_string
+
+
+
+# #  the_insert_method_on_a_string
 
 typo = "GeorgWashington"
 
@@ -16,7 +21,14 @@ p typo
 # "George Washington"
 
 
-# the_squeeze_method_on_a_string
+
+
+
+
+
+
+
+# # the_squeeze_method_on_a_string
 
 sentence = "Thhe aarvark jummped   ovver the fence!"
 puts sentence.squeeze
@@ -48,13 +60,12 @@ def custom_squeeze(string)
         else
             final << char
         end
-
     end
     final
-
 end
 
-p custom_squeeze(sentence) #"The arvark jumped over the fence!"
+p custom_squeeze(sentence) 
+# "The arvark jumped over the fence!"
 
 #           REFACTORED
 
@@ -74,7 +85,13 @@ p custom_squeeze(sentence) #"The arvark jumped over the fence!"
 
 
 
-# the .clear method_on_a_string
+
+
+
+
+
+
+# # the .clear method_on_a_string
 
 p "Blah blah blah".clear
 # ""
@@ -89,7 +106,13 @@ p word
 # ""
 
 
-# the_.delete_method_on_a_string
+
+
+
+
+
+
+# # the_.delete_method_on_a_string
 
 puts "Hello world".delete("ldr")
 # deletes the paramaters set in the parethensese
@@ -116,114 +139,19 @@ puts custom_delete("Hello world", "ldr")
 
 
 
+# # String_Interpolation
+name = "Boris"
 
+p "Hello #{name}, how are you?"
 
 
 
+age = 25
 
+p "I am " + age.to_s + " years old."
+p "I am #{age} years old"                   #better code
 
+x = 5
+y = 8
 
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+p "The sum of x and y is #{x + y}"
