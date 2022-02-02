@@ -302,11 +302,18 @@ p voicemail.scan(/\d+/)
 # will retrun us an array of the digits and 
 # any time a digit proceeds another digit
 # it will be include in the index together
-p voicemail.scan(/\a+/)
+p voicemail.scan(/\D/)
 # []
-# returns an empty array
-# doesnt work on letters apprently
-
+# returns an array of anything thats not a digit
+p voicemail.scan(/\s/)
+# [" ", " ", " ", " ", " ", " ", " ", " "]
+# returns an array of anything thats white space
+p voicemail.scan(/\S/)
+# ["I", "c", "a", "n", "b", "e", "r", "e", "a", "c", "h", "e", "d", "a", "t", "a",
+#  "a", "a", "a", "a", "a", "5", "5", "5", "-", "4", "5", "4", "5", "-", "5", "5",
+#  "5", "5", "o", "r", "a", "d", "d", "r", "e", "s", "s", "@", "g", "m", "a", "i",
+#  "l", ".", "c", "o", "m"]
+# returns an array of anything thats not a white space
 
 voicemail = "I can be reached at aaaaaa 555-4545-5555 or address@gmail.com"
 def pull_num_arr(entire_arr)
@@ -356,6 +363,33 @@ puts phrase.scan(/...am/)
 # can return multiple 'anycharacter' symbols
 # we can use the . in any position within the //
 # to adjust our search
+
+
+
+
+
+
+
+
+
+
+# # The Backslash Character   \ 
+
+
+# used to look for the characters that have special use 
+# cases within these methdos
+paragraph = "This is my essay. I deserve an A. I rank it 5 out of 5."
+
+puts paragraph.scan(/\./)
+# .
+# .
+# .
+puts paragraph.scan(/\d/)
+
+
+
+
+
 
 
 
