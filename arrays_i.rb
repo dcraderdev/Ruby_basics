@@ -2,6 +2,10 @@
 
 # # ARRAYS I
 
+# ...and some more string stuff too
+# ...some block stuff at the bottom as well
+
+
 
 
 
@@ -11,13 +15,14 @@
 # # access_multiple variables
 
 channels = ["CBS FOX NBC ESP UPN"]
-
 p channels.values_at(0)
+# ["CBS FOX NBC ESP UPN"]
 
 p "hello"
+# "hello"
 
 p channels.values_at( 0, -1)
-
+# ["CBS FOX NBC ESP UPN", "CBS FOX NBC ESP UPN"]
 
 
 
@@ -26,8 +31,9 @@ p channels.values_at( 0, -1)
 numbers = [0, 2, 4, 2, 10, 12, 14]
 
 p numbers.slice(3)
+# 2
 p numbers.slice(100)
-
+# nil
 
 
 
@@ -548,7 +554,7 @@ arr = [-1, 2, 1, 2, 5, 7, 3]
 
 # Prints the product of the elements and its index pos.
 # if the index position is greater than the element
-# Create the with a method
+# Create the custom def with a method
 
 def print_if(array)
     array.each_with_index do |number, index|
