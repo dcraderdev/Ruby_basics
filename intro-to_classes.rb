@@ -216,20 +216,60 @@ class Gadget
     @password = "topsecret"
     @production_number = "#{("a".."z").to_a.sample}-#{rand(1..999)}"
   end
-  def info
+
+  # def info
+  #    "Gadget #{@production_number} has the username #{@username}"
+  # end
+  def to_s
     "Gadget #{@production_number} has the username #{@username}"
   end
+
 end
 
 phone = Gadget.new
 laptop = Gadget.new
+
 # p phone.instance_variables
 # p laptop.instance_variables
 # we can check .instance_variables although the inforamation is hidden 
-puts phone.info
-puts laptop.info
+
+# puts phone.info
+# puts laptop.info
+
+puts phone.to_s
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+# # Define a Cake class. It should declare 3 instance methods.
+#    - The bake method should return the string "Baking the cake"
+#    - The slice method should return the string "Slicing the cake"
+#    - The sell method should return the string "Sold the cake"
+
+
+class Cake
+  def bake
+    puts "Baking the cake"
+  end
+  def slice
+    puts "Slicing the cake"
+  end
+  def sell
+    puts "Sold the cake"
+  end
+end
+
+birthday = Cake.new
+
+
+birthday.sell
