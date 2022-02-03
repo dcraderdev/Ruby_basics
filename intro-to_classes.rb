@@ -118,12 +118,12 @@ p 5.methods.sort
 
 # #   CREATE A CLASS
 
-class Gadget
+class Gadgetintro
 end
 
-phone = Gadget.new
-laptop = Gadget.new
-microwave = Gadget.new
+phone = Gadgetintro.new
+laptop = Gadgetintro.new
+microwave = Gadgetintro.new
 
 p microwave.class
 # Gadget
@@ -139,6 +139,31 @@ p microwave.methods
 #  :!, :==, :!=, :__send__, :equal?, :instance_eval, :instance_exec, :__id__]
 
 
+puts phone.respond_to?(:class)
+# true
+puts phone.respond_to?(:methods)
+# true
+puts phone.respond_to?(:is_a?)
+# true
+puts phone.respond_to?(:respond_to?)
+# true
+puts phone.respond_to?(:length?)
+# false
+# we havent defined anything that would give a length at this point
+
+# shiny = Gadgetintro.new
+# flashy = Gadgetintro.new 
+
+# # initially these two objects have different ids
+# # but if we were to point them at one another they would have the same id
+# # if they are in the same location in memory, then they are the same object
+# glossy = shiny
+# p glossy.object.id
+# # true
+# p shiny.object.id
+# # true
+# shiny.object.id == glossy.object.id
+# # false
 
 
 
@@ -147,6 +172,62 @@ p microwave.methods
 
 
 
+
+
+# # Instance variables and the .initialize method
+
+
+# Instance variables are variables that belong to a specific object
+# instance variables define the objects properties or attributes 
+# the instance variables make up the objects state
+# each object can have a custom state
+
+
+# Define an instance variable
+
+# Instance variables begin with the @ symbol (i.e. @name)
+# the @ symbol is called a sigil, a special character that denotes the variable's scope
+# without the @ sigil, the variable would be interpreted as a 
+# local variable to the method it is used in
+
+# @name = "Donovan"
+# @age = 29
+
+# The .initialize method is called immediately when an object is instatiated 
+# from a class with the new method
+
+# the .initialize method offers an opportunity to assign values to instance variables 
+# in order to define the object's state
+
+# if the .intitialize method is not defined in the calls, each object is intialized 
+# with no state
+
+# the assignment of values to instance variables does not mean the values have to stay 
+# constant. the objects state can be altered later.
+
+
+
+# have to have the method name as intialize, this is how Rub/ill give u 400ky knows that this is the 
+# method it will run whenever a new object is created from the gadget class
+
+class Gadget
+  def intitialize
+    @username = "User #{rand(1..100)}"
+    @password = "topsecret"
+    @production_number = "#{("a".."z").to_a.sample}-#{rand(1..999)}"
+  end
+  def info
+    "Gadget #{@production_number} has the username #{@username}"
+  end
+end
+
+phone = Gadget.new
+laptop = Gadget.new
+# p phone.instance_variables
+# p laptop.instance_variables
+# we can check .instance_variables although the inforamation is hidden 
+puts phone.info
+puts laptop.info
 
 
 
