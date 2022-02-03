@@ -379,12 +379,138 @@ puts phrase.scan(/...am/)
 # used to look for the characters that have special use 
 # cases within these methdos
 paragraph = "This is my essay. I deserve an A. I rank it 5 out of 5."
+[".", ".", "."]
+p paragraph.scan(/\./).class
+puts paragraph.scan(/\./).class
+# .
+# .
+# .
+p voicemail.scan(/\d/)
+# return an array of any single digit
+# the \d is a special command
+voicemail = "I can be reached at aaaaaa 555-4545-5555 or address@gmail.com"
+p voicemail.scan(/\d+/)
+# ["555", "4545", "5555"]
+# will retrun us an array of the digits and 
+# any time a digit proceeds another digit
+# it will be include in the index together
+p voicemail.scan(/\D/)
+# []
+# returns an array of anything thats not a digit
+p voicemail.scan(/\s/)
+# [" ", " ", " ", " ", " ", " ", " ", " "]
+# returns an array of anything thats white space
+p voicemail.scan(/\S/)
+# ["I", "c", "a", "n", "b", "e", "r", "e", "a", "c", "h", "e", "d", "a", "t", "a",
+#  "a", "a", "a", "a", "a", "5", "5", "5", "-", "4", "5", "4", "5", "-", "5", "5",
+#  "5", "5", "o", "r", "a", "d", "d", "r", "e", "s", "s", "@", "g", "m", "a", "i",
+#  "l", ".", "c", "o", "m"]
+# returns an array of anything thats not a white space
 
-puts paragraph.scan(/\./)
-# .
-# .
-# .
-puts paragraph.scan(/\d/)
+
+
+
+
+
+
+
+
+
+
+# # RegEx Anchors in Ruby
+
+# an anchor is a specific symbol that ties a match to a specific
+# point within a certain string
+# for example, strictly the end of a string or at the beignning
+
+poem = "99 bottles of beer on the wall, 99 bottles of beer"
+
+p poem.scan(/\d+/)
+# ["99", "99"]
+# This will return an array of any and all occurances 
+# of a digit or any digit following more digits int he .scan method
+p poem.scan(/\A\d+/)
+# ["99"]
+# adding this \A returns any digit or digits following more digits
+# but only at the start of the string that the .scan method is called on
+p poem.scan(/\d+\z/)
+# []
+# adding this \z returns any digit or digits following more digits
+# but only at the end of the string that the scan method is called on
+# has to be placed at the end of the .scan method
+
+
+
+
+
+
+
+
+
+
+# # Regex characters to exclude characters
+
+# Say we wanted to return all constanants in this string
+# We can do it all in once line but it is shown step by step
+
+sales = "I bought 9 apples 25 bananas and 4 oranges at the store"
+p sales.scan(/[^ ]/)
+# we can use the ^ to exclude what we dont want to
+# include in our .scan method
+p sales.scan(/[^aeiou]/)
+# ["I", " ", "b", "g", "h", "t", " ", "9", " ", "p", "p", "l", "s", " ", "2", "5", " ", "b", "n", "n", "s", " ", "n", "d", " ", "4", " ", "r", "n", "g", "s", " ", "t", " ", "t", "h", " ", "s", "t", "r"]
+#case sensitive so it did not remove the I at the beginning
+p sales.scan(/[^aeiouAEIOU]/)
+p sales.scan(/[^aeiou\s]/)
+# we can use \s to remove any spaces
+p sales.scan(/[^aeiouAEIOU,\s]/)
+# a , to remove commas
+p sales.scan(/[^aeiouAEIOU\s\d]/)
+# \d to remove digits
+p sales.scan(/[^aeiouAEIOU\s\d\.]/)
+# \. at the end to remove periods
+p sales.scan(/[^aeiouAEIOU\s\d\.]/).length
+# 24
+
+
+
+
+
+
+
+
+
+
+# # the .sub and .gsub methods
+
+# Used in Regular Expressions in order to find and replace 
+# certain sub strings within other strings
+
+
+puts "whimper".sub("m", "s")
+# first argument is what to sub out
+# second arument is what to sub in
+# only replaces the first occuarance of the thing searched for
+puts "wordplay".sub("word", "sword")
+# swordplay
+# we can add multiple characters in the search
+word = "aspirin"
+puts word.sub("in", "ing")
+# aspiring
+puts word
+# aspirin
+puts word.sub!("in", "ing")
+puts word
+# aspiring
+# can make perm with !
+puts "an apple".gsub("a", "-")
+# -n -pple
+# .gsub replaces every occurance of the first argument with the second argument
+puts "555-444-5454".gsub(/[-\s\(\)]/, "")
+# 5554445454
+# .gsub replaces every occurance of the first argument with the second argument
+# leave second field blank to replace with nothing
+
 
 
 
