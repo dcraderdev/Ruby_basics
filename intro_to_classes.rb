@@ -229,7 +229,25 @@ puts phone.respond_to?(:length?)
 # they will actually modify the objects state after it has been defined by the intialize method
 # they are also called writer methods because they write a new value to an instance's variables
 
+
+
+
+# # Shortcut Accessor Methods
+
+# will generate both a setter and a getter method
+
+
+
+
+
 class Gadget
+
+  attr_accessor :username
+  # this will automatically generate both the getter and setter for @username
+
+
+
+
   def initialize
     @username = "User #{rand(1..100)}"
     @password = "topsecret"
@@ -290,6 +308,11 @@ phone.password=("bestpassword")
 
 
 
+
+
+
+
+
 # # Define a Cake class. It should declare 3 instance methods.
 #    - The bake method should return the string "Baking the cake"
 #    - The slice method should return the string "Slicing the cake"
@@ -312,3 +335,96 @@ birthday = Cake.new
 
 
 birthday.sell
+
+
+
+
+
+
+
+
+
+
+# # Shortcut Accessor Methods
+
+# attr_accessor :
+# will generate both a setter and a getter method
+
+
+
+
+
+class Gadget
+
+  attr_accessor :username
+  # attribute accessor will automatically generate BOTH the getter and setter for @username
+  attr_reader :production_number
+  # attribute reader will automatically generate just a getter for @production_number (read-only)
+  attr_writer :password
+  # attribute write will automatically generate just a setter for @password (write-only)
+  
+  # we can also list them spearated by commas
+  # i.e.  attr_reader :production_number, :username
+  
+  def initialize
+    @username = "User #{rand(1..100)}"
+    @password = "topsecret"
+    @production_number = "#{("a".."z").to_a.sample}-#{rand(1..999)}"
+  end
+  def to_s
+    "Gadget #{@production_number} has the username #{@username}, the #{self.class} class and it has the ID #{self.object_id}"
+  end
+end
+
+phone = Gadget.new
+laptop = Gadget.new
+
+p phone.username
+p phone.production_number
+
+phone.username = "secretagent"
+
+p phone.username
+
+
+
+
+
+
+
+
+
+
+
+
+# # add parameters to initialize method
+
+# we can add parameters to the intialize method. 
+# This will allow us to pass information to the object when we create it
+
+
+class Gadget
+
+  attr_accessor :username
+  attr_reader :production_number
+  attr_writer :password
+
+  def initialize(username, password)
+    @username = username
+    @password = password
+    @production_number = "#{("a".."z").to_a.sample}-#{rand(1..999)}"
+  end
+  def to_s
+    "Gadget #{@production_number} has the username #{@username}, the #{self.class} class and it has the ID #{self.object_id}"
+  end
+end
+
+
+g1 = Gadget.new("rubyfan102", "programming123")
+g2 = Gadget.new("misterprogrammer", "password619")
+# when you create the new object, you fill out the parameters that are in the 
+# intiaize method of that class
+
+p g1.username
+p g1
+
