@@ -428,3 +428,13 @@ g2 = Gadget.new("misterprogrammer", "password619")
 p g1.username
 p g1
 
+
+
+
+
+
+
+
+
+
+
