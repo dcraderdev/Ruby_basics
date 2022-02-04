@@ -174,17 +174,12 @@ puts phone.respond_to?(:length?)
 
 
 
-# # Instance variables and the .initialize method
-
+# # Instance variables
 
 # Instance variables are variables that belong to a specific object
 # instance variables define the objects properties or attributes 
 # the instance variables make up the objects state
-# each object can have a custom state
-
-
-# Define an instance variable
-
+# each object can have a custom states
 # Instance variables begin with the @ symbol (i.e. @name)
 # the @ symbol is called a sigil, a special character that denotes the variable's scope
 # without the @ sigil, the variable would be interpreted as a 
@@ -192,6 +187,11 @@ puts phone.respond_to?(:length?)
 
 # @name = "Donovan"
 # @age = 29
+
+
+
+
+# # The .initialize method 
 
 # The .initialize method is called immediately when an object is instatiated 
 # from a class with the new method
@@ -205,13 +205,32 @@ puts phone.respond_to?(:length?)
 # the assignment of values to instance variables does not mean the values have to stay 
 # constant. the objects state can be altered later.
 
-
-
 # have to have the method name as intialize, this is how Rub/ill give u 400ky knows that this is the 
 # method it will run whenever a new object is created from the gadget class
 
+
+
+
+# # getter methods
+
+# A Getter method are is how our code will be able to safely interact with the outside world
+# by placing a barrier between our code and what the used can interact with it allows us to control
+# the interaction and make sure all the data flows smoothly
+# .getter methods are used as read methods, they read the instance variable
+
+
+
+
+
+# # setter methods    
+
+# a setter method is another type of instance method but it is resposnible for setting a new value 
+# for an insntace variable
+# they will actually modify the objects state after it has been defined by the intialize method
+# they are also called writer methods because they write a new value to an instance's variables
+
 class Gadget
-  def intitialize
+  def initialize
     @username = "User #{rand(1..100)}"
     @password = "topsecret"
     @production_number = "#{("a".."z").to_a.sample}-#{rand(1..999)}"
@@ -221,27 +240,47 @@ class Gadget
   #    "Gadget #{@production_number} has the username #{@username}"
   # end
   def to_s
-    "Gadget #{@production_number} has the username #{@username}"
+    "Gadget #{@production_number} has the username #{@username}, the #{self.class} class and it has the ID #{self.object_id}"
   end
+  
+  def username            # getter method
+    @username
+  end
+
+  def username=(new_username)   #setter method
+    @username = new_username
+  end
+
+  def production_number   # getter method
+    @production_number
+  end
+
+  def password=(password)   #    def password= is the setter method    def password=(password)  (password) is our new value
+    @password = password    #     @password is our instance variable    @password = password    password is our new value
+  end                       #      we set the new value to @password    end
+
 
 end
 
 phone = Gadget.new
 laptop = Gadget.new
 
-# p phone.instance_variables
-# p laptop.instance_variables
-# we can check .instance_variables although the inforamation is hidden 
-
-# puts phone.info
-# puts laptop.info
-
-puts phone.to_s
+p phone.username
+phone.username =("rubyman")
+p phone.username
+phone.to_s
+# Now we can view and overwrite the username since we have a setter and a getter method. 
 
 
+phone.password=("bestpassword")
+# we can't print the changed password because there isnt a getter method
+# but we wont have a problem setting a new password because there is a setter method
 
+# p phone.password
+# /Users/donovancrader/Documents/GitHub/Coding_basics/intro-to_classes.rb:276:in `<main>': undefined method `password' for #<Gadget:0x00007ffae2999668> (NoMethodError)
+# Did you mean?  password=
 
-
+# [Done] exited with code=1 in 0.087 seconds
 
 
 
