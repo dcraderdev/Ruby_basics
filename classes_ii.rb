@@ -119,8 +119,8 @@ class Gadget
     It is made from the #{self.class} class and it
     has the ID #{self.object_id}."
   end
-  
-  def password=(new_password)
+
+  def password= (new_password)
    @password = new_password if validate_password(new_password)
   end
 
@@ -141,10 +141,42 @@ class Gadget
 end
 
 phone = Gadget.new("user", "password111")
-p phone.password
+# p phone.password
 
 phone.password = 123
-puts phone.password
+# p phone.password
+
+
+
+
+
+
+
+
+# # Prefer Instance methods to instance variables
+# as opposed to writing more instance variables, leverage instance methods to create new data
+# and as a way to hide the behind the scenes computing/information
+
+
+class BankAccount
+
+  def initialize
+    @amount = 5000
+  end
+
+  def status
+    "Your bank account has a total of #{amount} dollars"
+  end
+
+  private
+
+  def amount
+    @amount / 100
+  end
+end
+
+ba = BankAccount.new
+p ba.status
 
 
 
@@ -154,9 +186,85 @@ puts phone.password
 
 
 
+# # Calling multiple setter methods within one method
+
+# reset, alter more than one of our objects method variables 
+# one instance method can have more than one objective
+
+
+class Gadget
+
+  attr_reader :production_number, :apps
+  attr_accessor :username
+
+  def initialize(username, password)
+    @username = username
+    @password = password
+    @production_number = generate_production_number
+    @apps = []
+  end
+  def to_s
+    "Gadget #{@production_number} has the username #{@username}.
+    It is made from the #{self.class} class and it
+    has the ID #{self.object_id}."
+  end
+  def reset(username, password)
+    self.username = username
+    self.password = password
+    self.apps = []
+  end
+  def password=(new_password)
+   @password = new_password if validate_password(new_password)
+  end
+
+  private
+  attr_writer :apps
+
+  def generate_production_number
+    start_digits = rand(10000..99999)
+    end_digits = rand(10000.99999)
+    alphabet = ("A".."Z").to_a
+    middle_digits = "2017"
+    5.times { middle_digits << alphabet.sample }
+    "#{start_digits}-#{middle_digits}-#{end_digits}"
+  end
+
+  def validate_password(new_password)
+    new_password.is_a?(String) && new_password.length >= 6 && new_password =~ /\d/
+  end                                        # if digit not found reurns nil if false, 1 if true
+end
+
+phone = Gadget.new("user", "password111")
+p phone
+phone.reset("username", "password")
+p phone
 
 
 
 
 
+
+
+
+# # structs
+
+# less fucntionality than a class, but its basically a class with only instance variables
+# structs are good for when you only need to create a framework for an object
+# not for anything too complicated
+
+
+module AppStore
+
+  App = Struct.new(:name, :developer, :version)
+
+  APPS = [
+    App.new(:chat, :facebook, 2.0),
+    App.new(:Twitter, :twitter, 5.8),
+    App.new(:Weather, :yahoo, 10.15)
+  ]
+  def self.find_app(name)
+    APPS.find { |app| app.name == name}
+  end
+
+end
 

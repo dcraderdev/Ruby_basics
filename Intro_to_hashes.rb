@@ -263,6 +263,10 @@ p shopping_list.values.uniq
 
 
 
+
+
+
+
 # # Create a hash with a default value
 
 fruit_cost = {banana: 1.05}

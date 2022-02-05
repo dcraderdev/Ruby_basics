@@ -23,7 +23,7 @@
 
 # Syntax and Style
 # Modules names are written in UpperCamelCase
-# Constants in modules hsould be written in ALL CAPS
+# CONSTANTS in modules should be written in ALL CAPS
 # Access module methods with the dot operator (.)
 # Access module constants with the :: symbol
 # The :: symbol is called the scope resolution operator 
