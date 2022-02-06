@@ -268,3 +268,63 @@ module AppStore
 
 end
 
+
+
+
+
+
+
+
+# # Class variables and class methods
+
+
+# an attribute or a method that we send to a class
+
+
+# CLASS VARIABLES
+# a way to attach a class and its information to an object
+# a class variable belongs to the whole class rather than an object
+# clas variables store information that does not pertain to an instance
+# start with @@ sigil
+
+# CLASS METHODS
+# a class method is available on the class rather than the instance
+# Class methods contain functionality that does not involve one instance
+# a class method can be called even if objects/ instances do not exist
+# the new method that we call upon a class to create an object is an example of a class method
+# class methods are prefixed with the self keyword
+
+
+class Bicycle
+  @@maker = "BikeTech"
+  @@count = 0 
+
+  def self.description
+    "Hi there, Im the blueprint for Bicycles! Use me to create a Bicycle object"
+  end
+
+  def self.count
+    @@count
+  end
+
+  def maker
+    @@maker
+  end
+
+  def initialize
+   @@count += 1 
+  end
+end
+
+p Bicycle.description
+p Bicycle.count
+
+GnarGnar3000 = Bicycle.new
+p GnarGnar3000.maker
+p Bicycle.count
+p ""
+
+
+
+
+
