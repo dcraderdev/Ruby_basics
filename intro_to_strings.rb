@@ -8,19 +8,19 @@
 
 
 
-#NOOB COMMANDS
+# Printing text
 puts "hello world"
-#puts "shoots brah"
-puts "no more waves brah"
-puts "goodbye world" #no more text
+puts "We're gonna try to have some fun and learn to code!"
+puts "No strings attached!"
+puts "Woooooo.9" 
 
 
 
 
 # # math operations
 puts 2 + 2
-puts -4+2
-puts 5*5.0+ 8 - 9 * 2.050
+puts -4 + 2
+puts 5 * 5.0 + 8 - 9 * 2.050
 
 
 
@@ -40,22 +40,24 @@ puts 13 * 3.123123123
 # greater than >
 # less than <
 # greater than or equal to >=
-puts "5==5"
-puts 5==5
-puts "5==6-1"
-puts 5==6-1-0
+
+puts "5 == 5"
+puts 5 == 5 
+puts "5 == 6-1"
+puts 5 == 6 - 1 - 0 
 
 
 
 
 
 # # boolean data type lecture
-#can only be true/false
-#operations
+# can only be true/false
+
+# operations
 # ! (not)
 # && (and)
 # || (or)
-puts #leaving puts blank leaves the line blank
+
 
 puts false || false
 puts false || true
