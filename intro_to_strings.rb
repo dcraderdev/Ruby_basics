@@ -10,9 +10,9 @@
 
 # Printing text
 puts "hello world"
-puts "We're gonna try to have some fun and learn to code!"
-puts "No strings attached!"
-puts "Woooooo.9" 
+p "Let's have some fun and learn to code!"
+print "No strings attached!"
+print " Woooooo!" 
 
 
 
