@@ -411,3 +411,195 @@ end
 ft = Firetruck.new("Ford", 4)
 puts ft.maker
 p ft.drive(45)
+
+
+
+
+
+
+
+
+
+
+# # class variables across Subclasses
+
+
+class Product
+  @@product_counter = 0
+
+  def self.counter
+    @@product_counter
+  end
+
+  def initialize
+    @@product_counter += 1
+  end
+end
+
+
+class Widget < Product
+  @@widget_counter = 0
+
+  def self.counter
+    @@widget_counter
+  end
+
+  def initialize
+    super
+    @@widget_counter += 1
+  end
+
+end
+
+class Thingamajig < Product
+  @@thingamajig_counter = 0
+
+  def self.counter
+    @@thingamajig_counter
+  end
+
+  def initialize
+    super
+    @@thingamajig_counter += 1
+  end
+end
+
+
+
+
+watchamajig = Widget.new
+p Widget.counter
+
+timeamajig = Thingamajig.new
+p Thingamajig.counter
+
+p Product.counter
+
+
+
+
+
+
+
+
+
+
+
+
+# # singleton classes and singleton methods
+
+
+# singleton method is a method that exists on one single instance of an object that we substantiate froma  class
+
+class Player
+  def play_game
+    rand(1..100) > 50 ? "Winner" : "Loser"
+  end
+
+end
+
+bob = Player.new
+donovan = Player.new
+
+p donovan.play_game
+p bob.play_game
+
+def donovan.trainhard
+  "Winner!"
+end
+
+p donovan.play_game   
+p donovan.trainhard   
+
+
+# this would act like any other method and can be called on a variable/object in a class
+# uses the variable/object name in method name
+# if we reuse the same method name that is in the superclass we will overwrite that method
+# can't detect singleton methods in .ancestors method
+# but we can use .singleton_methods
+def donovan.play_game
+  "Winner!"
+end
+
+p donovan.play_game
+# now overwrites to Winner! everytime
+p donovan.trainhard
+
+p donovan.singleton_methods
+# [:play_game, :trainhard]
+
+
+
+
+
+
+
+
+
+# # Hash as initialize argument in a class
+
+
+class Candidate
+  attr_accessor :name, :age, :occupation, :hobby, :birthplace
+  def initialize(name, age, occupation, hobby, birthplace)
+    @name = name
+    @age = age
+    @occupation = occupation
+    @hobby = hobby
+    @birthplace = birthplace
+  end
+end
+
+
+senator = Candidate.new("Donovan", 55, "Programmer", "Sitting inside", "Earth")
+p senator.occupation
+p senator.hobby
+p senator.name
+
+
+# we can feed in parameters/arguments to our newly created class objects
+# in a hash so that way we can avoid potential pitfalls/errors
+# we can also attach an empty ={} with (name, details = {}) on the inititalize method
+# just in case the user doesnt give any arguments
+
+
+class Candidate
+  attr_accessor :name, :age, :occupation, :hobby, :birthplace
+  def initialize(name, details = {})
+    defaults = {age: 35, occupation: "Candidate", hobby: "Running for office", birthplace: "Mars"}
+    defaults.merge!(details)
+
+    @name = name
+    @age = defaults[:age]
+    @occupation = defaults[:occupation]
+    @hobby = defaults[:hobby]
+    @birthplace = defaults[:birthplace]
+  end
+end
+
+info = {age: 53, birthplace: "Earth", occupation: "Programmer", hobby: "Sitting inside"}
+senator = Candidate.new("Donovan", info)
+p senator.occupation
+p senator.hobby
+p senator.name
+
+movieboy = Candidate.new("Bob", {hobby: "Horror movies", occupation: "Popcorn vendor"} )
+p movieboy.occupation
+p movieboy.hobby
+p movieboy.birthplace
+p movieboy.name
+
+stranger = Candidate.new("Fred", {})
+p stranger.occupation
+p stranger.hobby
+p stranger.birthplace
+p stranger.name
+
+
+
+
+
+
+
+
+

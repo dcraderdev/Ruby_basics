@@ -37,20 +37,53 @@ puts 13 * 3.123123123
 # # TRUE/FALSE COMMANDS
 # equal ==
 # not equal !=
+
 # greater than >
 # less than <
 # greater than or equal to >=
 
-puts "5 == 5"
+puts "5 = 5 ?"
 puts 5 == 5 
-puts "5 == 6-1"
+puts "5 = 6 - 1 - 0 ?"
 puts 5 == 6 - 1 - 0 
+puts "true = true ?"
+puts true == true
+puts "true NOT= false ?"
+puts true != false
 
 
 
+puts "3 & 3 are 3"
+puts 5 - 2 && 2 + 1 == 3
+puts "4 is 4, or 4 is 4"
+puts 6 - 2 == 4 || 2 + 2 == 4
 
 
-# # boolean data type lecture
+puts 5 == 5 
+puts 5 == 6 - 1 - 0
+puts true == true
+puts true != false
+
+
+puts 5 - 2 && 2 + 1 == 3
+puts 6 - 2 == 4 || 2 + 2 == 4
+
+
+
+== means "is this thing equal to this thing?"
+!  means "not!"
+&& means "and"
+|| means "or"
+
+
+>   is it greater?
+>=  greater or equal?
+<   is it less than?
+<=  less than or equal?
+
+
+
+# boolean data types
 # can only be true/false
 
 # operations
