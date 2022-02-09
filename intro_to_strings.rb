@@ -150,8 +150,13 @@ puts b * v
 puts "---"
 
 firstname = "Donovan"
-puts firstname
+
 lastname = " Crader"
+
+
+
+puts firstname
+
 puts firstname + lastname 
 puts firstname + lastname == "Donovan Crader"
 
