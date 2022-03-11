@@ -383,8 +383,8 @@ p ft.drive(45)
 
 
 
-# if we include parentheses with an argument we only want ocant pass a certain argument up from 
-# the super to have it perfrom some sort of operation with that argument 
+# if we include parentheses with an argument we only want to pass a certain argument up from 
+# the super and to have it perfrom some sort of operation with that argument 
 # so here we've allowed the maker information to pass from the superclass down to its subclass
 
 class Car
@@ -489,7 +489,7 @@ p Product.counter
 # # singleton classes and singleton methods
 
 
-# singleton method is a method that exists on one single instance of an object that we substantiate froma  class
+# singleton method is a method that exists on one single instance of an object that we substantiate from a class
 
 class Player
   def play_game
